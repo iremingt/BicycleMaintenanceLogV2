@@ -1,4 +1,34 @@
-<h1>New Log</h1>
+
+<style>
+
+.divBlackBorder {
+  width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+
+}
+
+a:link {
+  background-color: yellow;
+}
+
+a:visited {
+  background-color: cyan;
+}
+
+a:hover {
+  background-color: lightgreen;
+}
+
+a:active {
+  background-color: hotpink;
+} 
+
+</style>
+
+<h4>Please create your new maintenance log being sure to include a <u>title</u>, <u>description</u>, and <u>date</u></h4>
+<p style="color:red;">If this type of maintenance has previouslly been logged, please select edit instead.</p>
 
 <%= render 'form', log: @log %>
 
