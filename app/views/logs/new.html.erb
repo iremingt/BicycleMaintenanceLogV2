@@ -25,11 +25,27 @@ a:active {
   background-color: hotpink;
 } 
 
+body {
+    background-color: rgb(240, 255, 255);
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
 </style>
+
+
 
 <h4>Please create your new maintenance log being sure to include a <u>title</u>, <u>description</u>, and <u>date</u></h4>
 <p style="color:red;">If this type of maintenance has previouslly been logged, please select edit instead.</p>
 
+<div class="center">
+
 <%= render 'form', log: @log %>
 
 <%= link_to 'Back', logs_path %>
+
+</div>

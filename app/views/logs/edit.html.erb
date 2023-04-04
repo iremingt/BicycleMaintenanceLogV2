@@ -1,6 +1,42 @@
-<h1>Editing Log</h1>
+
+<style>
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+a:link {
+  background-color: yellow;
+}
+
+a:visited {
+  background-color: cyan;
+}
+
+a:hover {
+  background-color: lightgreen;
+}
+
+a:active {
+  background-color: hotpink;
+} 
+
+body {
+    background-color: rgb(240, 255, 255);
+}
+
+</style>
+
+<t><u>Edit</u></t>
+
+<div class="center">
+<h3>Please update the information below to the most recent</h3>
+
 
 <%= render 'form', log: @log %>
 
 <%= link_to 'Show', @log %> |
 <%= link_to 'Back', logs_path %>
+
+</div>
