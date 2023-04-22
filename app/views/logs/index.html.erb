@@ -55,8 +55,12 @@ body {
         <td><%= log.description %></td>
         <td><%= log.date %></td>
         <td><%= link_to 'Show', log %></td>
+        <% if user_signed_in? %>
         <td><%= link_to 'Edit', edit_log_path(log) %></td>
+        <% end %>
+        <% if user_signed_in? %>
         <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
