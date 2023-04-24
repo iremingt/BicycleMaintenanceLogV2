@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @work_log.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @work_log.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @work_log.date %>
+</p>
+
+<p>
+  <strong>Hoursuntilservicedue:</strong>
+  <%= @work_log.hoursUntilServiceDue %>
+</p>
+
+<%= link_to 'Edit', edit_work_log_path(@work_log) %> |
+<%= link_to 'Back', work_logs_path %>

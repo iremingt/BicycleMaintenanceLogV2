@@ -1,38 +1,15 @@
-
-<style>
-
-.center {
-  margin: auto;
-  width: 60%;
-  padding: 10px; 
-}
-
-.divBlackBorder {
-  width: 320px;
-  padding: 10px;
-  border: 5px solid gray;
-  margin: 0;
-
-}
-
-</style>
-
-
-
-<%= form_with(model: log) do |form| %>
-  <% if log.errors.any? %>
+<%= form_with(model: work_log) do |form| %>
+  <% if work_log.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(log.errors.count, "error") %> prohibited this log from being saved:</h2>
+      <h2><%= pluralize(work_log.errors.count, "error") %> prohibited this work_log from being saved:</h2>
 
       <ul>
-        <% log.errors.each do |error| %>
+        <% work_log.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-  
-  <div class="divBlackBorder">
 
   <div class="field">
     <%= form.label :title %>
@@ -49,9 +26,12 @@
     <%= form.number_field :date %>
   </div>
 
+  <div class="field">
+    <%= form.label :hoursUntilServiceDue %>
+    <%= form.number_field :hoursUntilServiceDue %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
-
-</div>
