@@ -32,12 +32,12 @@
           null,
           3,
           3,
+          0,
+          0,
+          null,
           6,
           3,
           null,
-          0,
-          0,
-          null,
           null,
           null,
           null,
@@ -45,11 +45,11 @@
           1,
           3,
           3,
-          6,
-          3,
+          4,
+          2,
           null,
-          0,
-          0,
+          2,
+          1,
           null,
           null,
           null,
@@ -67,7 +67,7 @@
           1,
           null,
           1,
-          12,
+          8,
           null,
           null,
           null,
@@ -85,6 +85,8 @@
       },
       "/root/BicycleMaintenanceLogV2/app/models/log.rb": {
         "lines": [
+          1,
+          null,
           1,
           null,
           null
@@ -263,6 +265,6 @@
         }
       }
     },
-    "timestamp": 1682368877
+    "timestamp": 1682369494
   }
 }
