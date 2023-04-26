@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe "work_logs/show", type: :view do
+RSpec.describe "maintenance_logs/show", type: :view do
   before(:each) do
-    @work_log = assign(:work_log, WorkLog.create!(
+    @maintenance_log = assign(:maintenance_log, MaintenanceLog.create!(
       title: "Title",
       description: "MyText",
       date: 2,
-      hoursUntilServiceDue: 3
+      hoursUntilService: 3
     ))
   end
 

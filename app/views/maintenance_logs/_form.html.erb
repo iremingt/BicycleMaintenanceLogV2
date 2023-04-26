@@ -1,10 +1,10 @@
-<%= form_with(model: work_log) do |form| %>
-  <% if work_log.errors.any? %>
+<%= form_with(model: maintenance_log) do |form| %>
+  <% if maintenance_log.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(work_log.errors.count, "error") %> prohibited this work_log from being saved:</h2>
+      <h2><%= pluralize(maintenance_log.errors.count, "error") %> prohibited this maintenance_log from being saved:</h2>
 
       <ul>
-        <% work_log.errors.each do |error| %>
+        <% maintenance_log.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -27,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :hoursUntilServiceDue %>
-    <%= form.number_field :hoursUntilServiceDue %>
+    <%= form.label :hoursUntilService %>
+    <%= form.number_field :hoursUntilService %>
   </div>
 
   <div class="actions">

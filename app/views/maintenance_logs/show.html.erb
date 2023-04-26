@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @maintenance_log.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @maintenance_log.description %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @maintenance_log.date %>
+</p>
+
+<p>
+  <strong>Hoursuntilservice:</strong>
+  <%= @maintenance_log.hoursUntilService %>
+</p>
+
+<%= link_to 'Edit', edit_maintenance_log_path(@maintenance_log) %> |
+<%= link_to 'Back', maintenance_logs_path %>

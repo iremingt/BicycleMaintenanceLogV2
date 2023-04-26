@@ -1,0 +1,2 @@
+class MaintenanceLog < ApplicationRecord
+end

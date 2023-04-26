@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Maintenance Logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>Hoursuntilservice</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @maintenance_logs.each do |maintenance_log| %>
+      <tr>
+        <td><%= maintenance_log.title %></td>
+        <td><%= maintenance_log.description %></td>
+        <td><%= maintenance_log.date %></td>
+        <td><%= maintenance_log.hoursUntilService %></td>
+        <td><%= link_to 'Show', maintenance_log %></td>
+        <td><%= link_to 'Edit', edit_maintenance_log_path(maintenance_log) %></td>
+        <td><%= link_to 'Destroy', maintenance_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Maintenance Log', new_maintenance_log_path %>
