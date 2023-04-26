@@ -14,7 +14,9 @@ RSpec.feature "Projects", type: :feature do
           fill_in "Description", with: "New description content"
         end
         click_button "Update Log"
-        expect(page).to have_content("Project was successfully updated")
+        #expect(page).to have_content("Project was successfully updated")
+        expect(page).to have_content("Log was successfully updated.")
+
       end
  
  
@@ -50,7 +52,7 @@ RSpec.feature "Projects", type: :feature do
             fill_in "Description", with: "New description content"
           end
           click_button "Create Log"
-          expect(page).to have_content("Project was successfully updated")
+          expect(page).to have_content("Title can't be blank")
         end
         ###########
   
@@ -75,6 +77,7 @@ RSpec.feature "Projects", type: :feature do
         ############
     end
 
+
     context "Login" do
       scenario "should sign up" do
         visit root_path
@@ -95,6 +98,8 @@ RSpec.feature "Projects", type: :feature do
         visit root_path
         expect(page).to have_content("Logged in")
       end
+
+
     end
   
 

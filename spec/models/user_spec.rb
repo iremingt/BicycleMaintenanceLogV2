@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
         it 'Cannot register if password is empty' do
           @user.password = nil
           @user.valid?
-          expect(@user.errors.full_messages).to include([ ])
+          expect(@user.errors.full_messages).to include("Password can't be blank")
         end
         it 'password even if password exists_Confirmation cannot be registered if it is empty' do
           @user.password_confirmation = ''
@@ -49,6 +49,11 @@ RSpec.describe User, type: :model do
           @user.password_confirmation = '12345'
           @user.valid?
           expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+        end
+        it 'Cannot register if email is empty' do
+          @user.password = nil
+          @user.valid?
+          expect(@user.errors.full_messages).to include("Email can't be blank")
         end
       end
     end

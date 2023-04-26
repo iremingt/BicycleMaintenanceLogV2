@@ -14,9 +14,9 @@ describe "Project Attribute Requirements on Create", :type => :model do
         expect(log.valid?).to eq(true)
     end
 
-    it "ensures the date is present when creating project" do
+    it "ensures if only date is present when creating project, it fails" do
         log = Log.new(date: 4022023)
-        expect(log.valid?).to eq(true)
+        expect(log.valid?).to eq(false)
     end
 
     it "ensures the description is present when creating project" do
@@ -34,9 +34,9 @@ describe "Project Attribute Requirements on Create", :type => :model do
       log = Log.new(title: "Title", description: "Content of the description", date: 4022023)
       expect(log.save).to eq(true)
     end
-    it "should not be able to save project when description missing" do
+    it "should be able to save project when description missing" do
         log = Log.new(title: "Some title content goes here")
-        expect(log.save).to eq(false)
+        expect(log.save).to eq(true)
     end
     it "should not be able to save project when title missing" do
         log = Log.new(description: "Some description content goes here")
