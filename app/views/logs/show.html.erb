@@ -1,6 +1,11 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
 <p id="notice"><%= notice %></p>
 
 <style>
+
 
 .divBlackBorder {
   width: 320px;
@@ -30,7 +35,10 @@ body {
     background-color: rgb(240, 255, 255);
 }
 
+
 </style>
+</head>
+<body>
 
 <h1> <u>Please update your log to the most accurate date and any other notes</u> </h1>
 
@@ -53,11 +61,46 @@ body {
   <strong>Date:</strong>
   <%= @log.date %>
 </p>
+<p><u> Time Remaining:</u><p/>
 
-<img src="https://t3.ftcdn.net/jpg/03/12/95/72/240_F_312957201_nwuPklullE9qNAFov708ixqjfukfjJGN.jpg" alt="Computer man" style="width:240px;height:150px;">
+<p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("May 12, 2023 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
 
 </div>
 
 
 <%= link_to 'Edit', edit_log_path(@log) %> |
 <%= link_to 'Back', logs_path %>
+
+</body>
+</html>
