@@ -1,3 +1,41 @@
+
+<style>
+
+
+.divBlackBorder {
+  width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+
+}
+
+a:link {
+  background-color: yellow;
+}
+
+a:visited {
+  background-color: cyan;
+}
+
+a:hover {
+  background-color: lightgreen;
+}
+
+a:active {
+  background-color: hotpink;
+} 
+
+body {
+    background-color: rgb(240, 255, 255);
+}
+
+div {text-align: center;}
+
+</style>
+
+<div>
+
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -24,3 +62,5 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+
+</div>
