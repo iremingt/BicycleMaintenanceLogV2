@@ -101,7 +101,33 @@ RSpec.feature "Projects", type: :feature do
 
 
     end
-  
+ 
+    #
+    context "delete" do
+      let!(:log) { Log.create(title: "Test title", description: "Test description", date: 4022023) }
+      before(:each) do
+        visit root_path
+        click_link 'Sign up'
+        within("form") do
+          fill_in "Email", with: "testing@test.com"
+          fill_in "Password", with: "123456"
+          fill_in "Password confirmation", with: "123456"
+          click_button "Sign up"
+        end
+
+      end
+
+
+       scenario "should delete" do
+          visit root_path
+          click_link "Destroy"
+          expect(page).to have_content("Log was successfully destroyed.")
+          expect(Log.count).to eq(0)
+       end
+    end
+
+
+
 
 end
  
