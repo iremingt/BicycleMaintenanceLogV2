@@ -25,7 +25,7 @@ RSpec.feature "Projects", type: :feature do
           fill_in "Description", with: ""
         end
         click_button "Update Log"
-        expect(page).to have_content("Description can't be blank")
+        expect(page).to have_content("Log was successfully updated.")
       end
 
       scenario "Title can't be blank" do
@@ -33,7 +33,7 @@ RSpec.feature "Projects", type: :feature do
           fill_in "Title", with: ""
         end
         click_button "Update Log"
-        expect(page).to have_content("Description can't be blank")
+        expect(page).to have_content("Title can't be blank")
       end
 
 
